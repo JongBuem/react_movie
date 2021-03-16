@@ -14,8 +14,8 @@ function Movie({id, year, title, summary, small_cover_image, medium_cover_image,
                 medium_cover_image:medium_cover_image,
                 genres:genres
             }
-        }}>
-            <div className="movie">
+        }} className="movie">
+           
                 <img src={medium_cover_image} alt={title} title={title}/>
                 <div className="movie__data">
                     <h3 className="movie__title">{title}</h3>
@@ -27,7 +27,7 @@ function Movie({id, year, title, summary, small_cover_image, medium_cover_image,
                     </ul>
                     <p className="movie_summary">{summary.slice(0,100)}...</p>
                 </div>            
-            </div>
+           
         </Link>
     );
 }
