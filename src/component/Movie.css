@@ -1,57 +1,41 @@
-.movies .movie {
-    background-color: white;
-    margin-bottom: 70px;
-    font-weight: 300;
-    padding: 20px;
-    border-radius: 5px;
-    width: 45%;
-    color: #adaeb9;
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-  }
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+.movies {
+  display: flex;
+  margin-top: 100px;
+  justify-content : space-around;	
+  flex-wrap : wrap;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.movie{
+  display: flex;
+  flex-wrap : wrap;
+  flex-direction : column;	
   
-  .movies .movie a {
-    display: grid;
-    grid-template-columns: minmax(150px, 1fr) 2fr;
-    grid-gap: 20px;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .movie img {
-    position: relative;
-    top: -50px;
-    max-width: 150px;
-    width: 100%;
-    margin-right: 30px;
-    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-  }
-  
-  .movie .movie__title,
-  .movie .movie__year {
-    margin: 0;
-    font-weight: 300;
-  }
-  
-  .movie .movie__title {
-    margin-bottom: 5px;
-    font-size: 24px;
-    color: #2c2c2c;
-  }
-  
-  .movie .movie__genres {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px 0px;
-  }
-  
-  .movie__genres li,
-  .movie .movie__year {
-    margin-right: 10px;
-    font-size: 14px;
-  }
-  
+}
+
+.movie_rank{
+  position: relative;
+  color: white;
+  font-size: 30px;
+  top: 40px;
+  left: 15px;
+  font-family: 'Sansita Swashed', cursive;
+  text-shadow: 0 4px 6px rgba(19, 19, 0, 0.1), 2px 5px 3px rgba(0, 0, 0, 0.8);
+}
+
+.movie_link{
+  text-decoration : none; 
+}
+
+.movie_main_title{
+  color: rgba(255, 255, 255, 0.938);
+  font-size: 13px;
+  text-align : center;
+}
+
+.movie_title{
+  font-size: 17px;
+  line-height : 10px;
+}

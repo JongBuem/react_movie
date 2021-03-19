@@ -1,0 +1,64 @@
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #353b48;
+  }
+
+.movie_data{
+    display: flex;
+    margin-top: 140px;
+    width: 80%;
+    background-color: white;
+    margin-bottom: 70px;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+.movie_data_info{
+    display: flex;
+    flex-direction : column;	
+}
+.movie_data img {
+    position: relative;
+    top: -50px;
+    width: 200px;
+    height: 300px;
+    margin-right: 30px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.movie_data_title{
+    margin-top: 20px;
+    height: 50px;
+    margin-bottom: 10px;
+
+}
+
+.data_box{	
+    padding: 10px;
+    display: flex;
+    border-top:  1px solid gray;;
+  
+}
+
+.data_box ul{
+    position: relative;
+    list-style : none;
+    left: -30px;
+    top:-13px;
+    font-size: 13px;
+}
+
+.movie_data_summary{
+    overflow-y: scroll;
+}
+
+html {
+    scroll-behavior: smooth;
+}
