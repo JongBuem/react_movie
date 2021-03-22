@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
+
+.Boxoffice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.Boxoffice .movie_rank {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  top: 40px;
+  left: 15px;
+  font-family: "Sansita Swashed", cursive;
+  text-shadow: 0 4px 6px rgba(19, 19, 0, 0.1), 2px 5px 3px rgba(0, 0, 0, 0.8);
+}
+
+.Boxoffice .movie_link {
+  text-decoration: none;
+}
+
+.Boxoffice .Boxoffice_menu {
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+  height: 45px;
+}
+
+.Boxoffice .good {
+  font-size: 13px;
+  width: 30%;
+  height: 100%;
+  border: 1px solid rgb(139, 135, 135);
+  border-radius: 5px;
+  background-color: rgb(26, 27, 27);
+}
+
+.Boxoffice .good .far {
+  color: white;
+  width: 100%;
+  margin-top: 14px;
+  margin-left: 10%;
+}
+
+.Boxoffice .Boxoffice_menu a {
+  margin-left: 10px;
+  width: 65%;
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: bottom;
+  color: white;
+  line-height: 40px;
+  background-color: rgb(14, 89, 150);
+  text-decoration: none;
+}

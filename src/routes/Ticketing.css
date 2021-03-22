@@ -1,0 +1,10 @@
+.ticketing {
+  margin-top: 50px;
+  background-color: white;
+}
+
+.ticketing_calendar {
+  width: 100vh;
+  background-color: rgb(61, 61, 61);
+  color: white;
+}

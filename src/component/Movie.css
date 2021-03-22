@@ -1,41 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
 .movies {
   display: flex;
   margin-top: 100px;
-  justify-content : space-around;	
-  flex-wrap : wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
   margin-left: 50px;
   margin-right: 50px;
 }
 
-.movie{
+.movie {
   display: flex;
-  flex-wrap : wrap;
-  flex-direction : column;	
-  
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.movie_rank{
+.movie_rank {
   position: relative;
   color: white;
   font-size: 30px;
   top: 40px;
   left: 15px;
-  font-family: 'Sansita Swashed', cursive;
+  font-family: "Sansita Swashed", cursive;
   text-shadow: 0 4px 6px rgba(19, 19, 0, 0.1), 2px 5px 3px rgba(0, 0, 0, 0.8);
 }
 
-.movie_link{
-  text-decoration : none; 
+.movie_link {
+  text-decoration: none;
 }
 
-.movie_main_title{
+.movie_main_title {
   color: rgba(255, 255, 255, 0.938);
   font-size: 13px;
-  text-align : center;
+  text-align: center;
 }
 
-.movie_title{
+.movie_title {
   font-size: 17px;
-  line-height : 10px;
+  line-height: 10px;
 }

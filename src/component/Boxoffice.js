@@ -1,22 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Movie.css";
+import "./Boxoffice.css";
 import { Link } from "react-router-dom";
 let rank = 0;
 
-function Movie({id, year, title, summary, small_cover_image, medium_cover_image, large_cover_image, genres, rating, runtime}){
+function Boxoffice({id, year, title, summary, small_cover_image, medium_cover_image, large_cover_image, genres, rating, runtime}){
     rank = rank+1;
-    if(rank>20){
+    if(rank>4){
         rank=1;
     } 
 
-    let _title=title;
-    if(_title.length >24){
-        _title = <span>{title.slice(0,24)}...</span> 
-    }
-
     return (
-        <div className="movie">
+        <div className="Boxoffice">
             <Link to={{
                 pathname:`/movie/${id}`,
                 state:{
@@ -31,15 +26,18 @@ function Movie({id, year, title, summary, small_cover_image, medium_cover_image,
                 <div className="movie_rank">{rank}</div>
                 <img src={medium_cover_image} alt={title} title={title}></img>
             </Link>
-                <div className="movie_main_title">               
-                    <h1 className="movie_title">{_title}</h1>
-                    <h5 className="movie_rating_year">평점:{rating}점 | 개봉일 : {year}</h5>
-                </div>  
+            <div className="Boxoffice_menu">
+                <div className="good">
+                    <i class="far fa-heart"> {id}</i>
+                </div>
+                <Link to="/ticketing">예매</Link>
+            </div>
         </div>          
     );
+    
 }
 
-Movie.propTypes = {
+Boxoffice.propTypes = {
     id: PropTypes.number.isRequired,
     year: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
@@ -51,4 +49,4 @@ Movie.propTypes = {
     runtime:PropTypes.number.isRequired
 };
 
-export default Movie;
+export default Boxoffice;

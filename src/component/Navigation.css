@@ -1,50 +1,48 @@
 :root {
-    --topmenu-shadow: 0 4px 6px rgba(50, 50, 3, 0.1), 0 1px 3px rgba(0, 0, 0, 0.8);
-    --shadow: 0 4px 6px rgba(50, 50, 3, 0.1), 0 1px 1px rgba(0, 0, 0, 0.8);
-    --border: 1px solid rgba(0, 0, 0, 0.2);
-    --menu-background-color: #fff;
-    --menu-hover-background-color: #c1c1c1;
-  }
-
-
-.nav{
-position:absolute;
-width: 100%;
-height: 60px;
-align-items : center;	
-display: flex;
-justify-content : center;	
-justify-content: space-evenly;	
-background-color: #212121;
-box-shadow: var(--topmenu-shadow);
-border: var(--border);
+  --topmenu-shadow: 0 4px 6px rgba(50, 50, 3, 0.1), 0 1px 3px rgba(0, 0, 0, 0.8);
+  --shadow: 0 4px 6px rgba(50, 50, 3, 0.1), 0 1px 1px rgba(0, 0, 0, 0.8);
+  --border: 1px solid rgba(0, 0, 0, 0.2);
+  --menu-background-color: #fff;
+  --menu-hover-background-color: #c1c1c1;
 }
 
-.nav .nav_menu{
+.nav {
+  position: absolute;
   width: 100%;
-text-align : center;
-justify-content : center;	
-text-decoration : none; 
-color: white;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  background-color: #212121;
+  box-shadow: var(--topmenu-shadow);
+  border: var(--border);
 }
 
-.nav .nav_menu .fa-film{
+.nav .nav_menu {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+
+.nav .nav_menu .fa-film {
   display: flex;
-  flex-direction : column;		
+  flex-direction: column;
   font-size: 40px;
 }
-.nav .nav_menu .fa-film .fas_name{
+.nav .nav_menu .fa-film .fas_name {
   font-size: 12px;
 }
 
-
 .nav .nav_menu:hover {
   display: flex;
-  align-items : center;	
+  align-items: center;
   height: 100%;
   border-bottom: 3px solid white;
 }
 
-.nav .icon:hover{
+.nav .icon:hover {
   border-bottom: none;
- }
+}
