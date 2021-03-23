@@ -1,10 +1,118 @@
 .ticketing {
+  padding: 20px;
+  width: 100vh;
   margin-top: 50px;
   background-color: white;
 }
 
-.ticketing_calendar {
-  width: 100vh;
-  background-color: rgb(61, 61, 61);
+.ticketing_topmenu {
+  display: flex;
+  padding: 15px;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.ticketing_topmenu .ticketing_movie {
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+.own {
+  border-right: rgb(138, 124, 124) 1px solid;
+}
+
+.ticketing_movie .ticketinmovie {
+  width: 100%;
+  background-color: rgb(20, 2, 2);
+  padding: 15px;
+  text-align: center;
   color: white;
+}
+
+.rc-calendar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  width: 300px;
+  height: 100%;
+  box-shadow: var(--topmenu-shadow);
+  border: var(--border);
+  outline: 0;
+}
+
+.rc-calendar-input-wrap,
+.rc-calendar-input {
+  text-align: center;
+  border: 0;
+  outline: 0;
+}
+
+.rc-calendar-column-header {
+  padding: 6px;
+}
+
+.rc-calendar-header {
+  line-height: 30px;
+  height: 30px;
+  border-bottom: 1px solid rgb(207, 198, 198);
+  border-top: 1px solid rgb(207, 198, 198);
+}
+
+.rc-calendar-body {
+  margin: 20px;
+  margin-top: 10px;
+}
+
+.rc-calendar-month-panel-body {
+  display: none;
+  flex-direction: column;
+  border-top: 1px solid rgb(207, 198, 198);
+}
+
+.rc-calendar-my-select {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rc-calendar-date-panel {
+  text-align: center;
+  border: 0;
+  outline: 0;
+}
+
+.rc-calendar-date {
+  background-color: white;
+  width: 100%;
+}
+
+.rc-calendar-date:hover {
+  border-radius: 60px;
+  background-color: rgb(131, 204, 238);
+}
+
+.rc-calendar-footer {
+  margin-bottom: 20px;
+}
+
+.rc-calendar-today-btn {
+  padding: 4px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(9, 74, 148);
+}
+
+.rc-calendar-month-panel-header,
+.rc-calendar-year-panel-body,
+.rc-calendar-year-panel-header {
+  display: none;
+}
+
+.rc-calendar-date,
+.rc-calendar-month-panel-month,
+.rc-calendar-footer-btn {
+  cursor: pointer;
 }

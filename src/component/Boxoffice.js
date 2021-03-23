@@ -28,7 +28,7 @@ function Boxoffice({id, year, title, summary, small_cover_image, medium_cover_im
             </Link>
             <div className="Boxoffice_menu">
                 <div className="good">
-                    <i class="far fa-heart"> {id}</i>
+                    <i className="far fa-heart"> {id}</i>
                 </div>
                 <Link to="/ticketing">예매</Link>
             </div>
