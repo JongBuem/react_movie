@@ -32,7 +32,7 @@ class App extends React.Component{
       <HashRouter>
         <Navigation/>
         <Route path="/movie" exact={true} render={() => <Moviechart movies={Movies} loading={Loading} />} />
-        <Route path="/ticketing" component={Ticketing}/>
+        <Route path="/ticketing" render={() => <Ticketing movies={Movies} loading={Loading} />} />
         <Route path="/" exact={true} render={() => <Home movies={Movies} loading={Loading} />} />
         <Route path="/about" component={About}/>
         <Route path="/movie/:id" exact={true} component={Detail}/>
