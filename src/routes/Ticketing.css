@@ -175,7 +175,6 @@
   position: relative;
   left: 10px;
   width: 98%;
-
   overflow-y: scroll;
   height: 230px;
 }
@@ -241,4 +240,69 @@
 .movie_ticket span {
   font-size: 20px;
   font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .ticketing {
+    width: 70%;
+  }
+
+  .ticketing_topmenu {
+    background: none;
+  }
+
+  .ticketing .ticketing_movie {
+    width: 60%;
+  }
+
+  .ticketing_movie .ticketingmovie {
+    font-size: 10px;
+  }
+
+  .fa-calendar-alt {
+    display: none;
+  }
+
+  .ticketingmovie {
+    cursor: pointer;
+  }
+
+  .rc-calendar {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 0px;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: var(--topmenu-shadow);
+    border: var(--border);
+    outline: 0;
+    background-color: white;
+    color: black;
+  }
+
+  .rc-calendar-column-header {
+    padding: 1px;
+  }
+  .ticketingmovie_time {
+    left: 3px;
+  }
+
+  .ticketingmovie_time_info ._time_info_1 {
+    width: 80%;
+  }
+
+  .ticketingmovie_time_info ._time_info_1 div {
+    margin-left: 3px;
+  }
+
+  .movie_ticket {
+    left: 0px;
+  }
+
+  .Ticketinposter h4 {
+    font-size: 10px;
+  }
 }

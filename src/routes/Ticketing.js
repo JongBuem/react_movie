@@ -108,7 +108,7 @@ function Ticketing(data){
             </div>
 
             <div className="ticketing_movie">
-              <div className="ticketingmovie">{Number(_year)}. {Number(_month)}. {Number(_date)}({String(_day)})</div>
+              <div className="ticketingmovie" onClick={toggle}>{Number(_year)}. {Number(_month)}. {Number(_date)}({String(_day)})</div>
               <i className="far fa-calendar-alt" onClick={toggle} ></i>
               <div className="ticketingmovie_calendar">
                 <button onClick={toggle}>{_calendar}</button>
