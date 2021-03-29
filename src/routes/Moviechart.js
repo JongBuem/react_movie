@@ -2,9 +2,9 @@ import React from "react";
 import Movie from "../component/Movie";
 import "./Moviechart.css";
 
-function Moviechart(data){
-  const movies = data.movies;
-  let loading = data.loading; 
+function Moviechart(data){ //라우터에서 전달한 props를 인자로 받아옴
+  const movies = data.movies; //영화정보 변수
+  let loading = data.loading; //로딩상황 변수
 
   return(
     <section className="App">

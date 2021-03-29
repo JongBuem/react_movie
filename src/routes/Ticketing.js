@@ -3,28 +3,28 @@ import Calendar from 'rc-calendar';
 import "./Ticketing.css";
 import { Link } from "react-router-dom";
 
-let _calendar =<Calendar/>;
-let today =new Date();
-let _year =today.getFullYear();
-let _month =today.getMonth() +1;
-let _date =today.getDate();
-let _date_1 =today.getDate();
-let _day = today.getDay();
-let _day_1 = today.getDay();
-let _ticketingmovie_time_title ="영화를 선택해 주세요."
-let _ticket = null;
+let _calendar =<Calendar/>; //켈린더 API
+let today =new Date(); //현재 시간, 날짜 정보
+let _year =today.getFullYear(); //년도
+let _month =today.getMonth() +1; //월
+let _date =today.getDate(); //몇일
+let _date_1 =today.getDate(); //켈린더가 선택한 일과 비교하기 위한 변수
+let _day = today.getDay(); //요일 
+let _day_1 = today.getDay(); //켈린더가 선택한 요일과 비교하기 위한 변수
+let _ticketingmovie_time_title ="영화를 선택해 주세요." //영화 선택전 제목
+let _ticket = null; //매표 출력 
 
-const Day_1_Array = ["오늘","오늘","오늘","오늘","오늘","오늘","오늘"];
-const Day_2_Array = ["일","월","화","수","목","금","토"];
-_day = Day_1_Array[_day];
+const Day_1_Array = ["오늘","오늘","오늘","오늘","오늘","오늘","오늘"]; //오늘 배열
+const Day_2_Array = ["일","월","화","수","목","금","토"]; //요일 배열
+_day = Day_1_Array[_day]; //현재는 오늘이기 때문에 오늘배열 출력
 
 
-function Ticketingmovieposter({title, small_cover_image}){
-  let _title=title;
-  if(_title.length >20){
-      _title = <span>{title.slice(0,20)}...</span> 
+function Ticketingmovieposter({title, small_cover_image}){ //영화정보를 인자로 받아옴
+  let _title=title; //영화 제목
+  if(_title.length >20){ //영화제목이 20글자가 넘으면
+      _title = <span>{title.slice(0,20)}...</span> //20글자이후는 ...으로 표시
   }
-  return(
+  return( //해당영화를 클릭시 영화제목을 전역변수의 영화제목으로 변경
     <div className="Ticketinposter">
       <Link to="/ticketing" className="Ticketinposter" onClick={function(){ _ticketingmovie_time_title = title; }.bind(this)}>
         <img src={small_cover_image} className="Ticketinposter"></img>
@@ -34,11 +34,11 @@ function Ticketingmovieposter({title, small_cover_image}){
   );
 }
 
-function Ticketing(data){
-  const [ state, setState ] = useState({ mode:"off", ticket:"off"});
-  const [ times, setTimes ] = useState({
-    count:0,
-    time:[
+function Ticketing(data){ //라우터에서 전달한 props를 인자로 받아옴
+  const [ state, setState ] = useState({ mode:"off", ticket:"off"}); //켈린더 와 매표의 초기모드
+  const [ times, setTimes ] = useState({ 
+    count:0, //몇관
+    time:[ //상영시간
       {when:"10:30", where:"1관"},
       {when:"11:30", where:"2관"},
       {when:"12:00", where:"3관"},
@@ -52,49 +52,47 @@ function Ticketing(data){
       {when:"23:30", where:"6관"},
     ]
   });
-  let time = times.time
+  const time = times.time 
   const movies = data.movies;
-  const toggle=()=>{
-      if(state.mode==="on"){
-        _calendar = <Calendar onSelect={function (date: moment[]) {
-          let _today = date._d;
-          _year = _today.getFullYear();
-          _month = _today.getMonth() +1;
-          _date = _today.getDate();
-          _day = _today.getDay();
-
-          if(_day === _day_1 && _date === _date_1){
-            _day = Day_1_Array[_day];
-          } else {
-            _day = Day_2_Array[_day];
+  
+  const toggle=()=>{ //날짜 선택, 켈린더 이미지 클릭시
+      if(state.mode==="on"){ //켈린더 모드가 on일경우
+        _calendar = <Calendar onSelect={function (date: moment[]) { //켈린더 API를
+          let _today = date._d;//켈린더가 선택한 날짜의 데이터의
+          _year = _today.getFullYear(); //연도
+          _month = _today.getMonth() +1; //월
+          _date = _today.getDate(); //일
+          _day = _today.getDay(); //요일
+          if(_day === _day_1 && _date === _date_1){ //오늘 [요일,일] 과 선택한 [요일,일] 이 같으면
+            _day = Day_1_Array[_day]; //켈린더의 요일을 오늘로 변경
+          } else { //그렇지 않다면 
+            _day = Day_2_Array[_day]; //켈린더의 해당 요일로 변경
           }
-          
         }}/>
-        setState({ ...state, mode:"off",ticket:"off" });
-
-      } else if(state.mode==="off"){
-        setState({ ...state, mode:"on",ticket:"on" });
-        _calendar = null;
-      }
+        setState({ ...state, mode:"off",ticket:"off" }); //켈린더와 티켓 모드를 off으로 변경
+      } else if(state.mode==="off"){ //켈린더 모드가 off일경우
+        setState({ ...state, mode:"on",ticket:"on" }); //켈린더와 티켓 모드를 on으로 변경
+        _calendar = null; //켈린더를 지움
+      } 
   }
 
-  if(state.ticket==="on"){
-    _ticket = 
-    <div className="movie_ticket">
+  if(state.ticket==="on"){ //매표의 모드가 on일 경우
+    _ticket =  //"_ticket"은 매표정보를 출력
+    <div className="movie_ticket"> 
       <span>매표</span>
       <div>영화 : {_ticketingmovie_time_title}</div>
       <div>날짜 : {Number(_year)}. {Number(_month)}. {Number(_date)}({String(_day)})</div>
       <div>시간 : {time[times.count].when}  ({time[times.count].where})</div>
     </div>
-  } else if(state.ticket==="off"){
-    _ticket = null;
+  } else if(state.ticket==="off"){ //매표의 모드가  off일 경우
+    _ticket = null; //매표정보를 지움
   }
 
     return(
     <div className="ticketing">
         <div className="ticketing_topmenu">
 
-            <div className="ticketing_movie own">
+            <div className="ticketing_movie own"> {/* 영화선택 메뉴 */}
               <div className="ticketingmovie">영화 선택</div>
               <div data={data} className="ticketingmovie_poster">
                 {
@@ -107,7 +105,7 @@ function Ticketing(data){
               </div>
             </div>
 
-            <div className="ticketing_movie">
+            <div className="ticketing_movie"> {/* 상영시간, 날짜, 메표 정보 메뉴 */}
               <div className="ticketingmovie" onClick={toggle}>{Number(_year)}. {Number(_month)}. {Number(_date)}({String(_day)})</div>
               <i className="far fa-calendar-alt" onClick={toggle} ></i>
               <div className="ticketingmovie_calendar">
