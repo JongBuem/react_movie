@@ -1,18 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap");
 .movies {
   display: flex;
-  margin-top: 100px;
-  justify-content: space-around;
+
   flex-wrap: wrap;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  justify-content: center;
 }
 
 .movie {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
+.box{
+  display: flex;
+  margin-top: -45px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow:hidden; 
+  scroll-behavior: smooth; 
+}
+
 
 .movie_rank {
   position: relative;
@@ -29,7 +41,7 @@
 }
 
 .movie_main_title {
-  color: rgba(255, 255, 255, 0.938);
+  color: black;
   font-size: 13px;
   text-align: center;
 }

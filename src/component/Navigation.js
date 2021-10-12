@@ -11,7 +11,10 @@ function Navigation(){
             <Link to="/" className="nav_menu icon"><i className="fas fa-film"><span className="fas_name">CINEMA</span></i></Link> 
             <Link to="/about" className="nav_menu">이벤트</Link>
             <Link to="/about" className="nav_menu">할인</Link>
-            <div className="nav_menu"/>
+            <div className="nav_menu_side">
+                <div className="nav_menu_side_item">로그인</div>
+                <div className="nav_menu_side_item">회원가입</div>
+            </div>
         </div>
     );
 }

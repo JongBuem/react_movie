@@ -7,12 +7,19 @@
   background-color: #353b48;
 }
 
+.detail{
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .movie_data {
   display: flex;
-  margin-top: 140px;
-  width: 80%;
+  width: 70%;
+  height: 400px;
   background-color: white;
-  margin-bottom: 70px;
   font-weight: 300;
   padding: 20px;
   border-radius: 5px;
@@ -60,6 +67,40 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* .fa-star{
+  transform:scale(0.9);
+  -webkit-text-fill-color: red ;
+  -webkit-text-fill-width: 10%;
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #2b2a29;
+} */
+
+
+.inner-star::before{
+  color: gold;
+}
+.outer-star {
+  position: relative;
+  display: inline-block;
+  color: #CCCCCC;
+}
+.inner-star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.outer-star::before, .inner-star::before {
+  content: '\f005 \f005 \f005 \f005 \f005';
+  font-family: 'Font Awesome 5 free';
+  font-weight: 900;
+}
+
+
 
 @media (max-width: 600px) {
   .movie_data {

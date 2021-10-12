@@ -28,6 +28,7 @@ class App extends React.Component{
 
   render(){ //원하는 컴포넌트들을 화면에 동시에 출력하거나 따로 출력하기 위한 라우터 이용
     const {Loading, Movies} = this.state; //영화정보와 로딩상황을 변수로 나타냄
+    console.log(Movies)
     return (
       <HashRouter>
         <Navigation/> {/*네비게이션 컴포넌트*/}

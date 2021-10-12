@@ -25,12 +25,14 @@ function Ticketingmovieposter({title, small_cover_image}){ //영화정보를 인
       _title = <span>{title.slice(0,20)}...</span> //20글자이후는 ...으로 표시
   }
   return( //해당영화를 클릭시 영화제목을 전역변수의 영화제목으로 변경
-    <div className="Ticketinposter">
+
       <Link to="/ticketing" className="Ticketinposter" onClick={function(){ _ticketingmovie_time_title = title; }.bind(this)}>
         <img src={small_cover_image} className="Ticketinposter"></img>
-        <h4>{_title}</h4>
+        {/* <h4>{_title}</h4> */}
+
+        <h4>{title}</h4>
       </Link>
-    </div>
+ 
   );
 }
 
@@ -57,7 +59,7 @@ function Ticketing(data){ //라우터에서 전달한 props를 인자로 받아�
   
   const toggle=()=>{ //날짜 선택, 켈린더 이미지 클릭시
       if(state.mode==="on"){ //켈린더 모드가 on일경우
-        _calendar = <Calendar onSelect={function (date: moment[]) { //켈린더 API를
+        _calendar = <Calendar onSelect={function (date) { //켈린더 API를
           let _today = date._d;//켈린더가 선택한 날짜의 데이터의
           _year = _today.getFullYear(); //연도
           _month = _today.getMonth() +1; //월
@@ -106,8 +108,11 @@ function Ticketing(data){ //라우터에서 전달한 props를 인자로 받아�
             </div>
 
             <div className="ticketing_movie"> {/* 상영시간, 날짜, 메표 정보 메뉴 */}
-              <div className="ticketingmovie" onClick={toggle}>{Number(_year)}. {Number(_month)}. {Number(_date)}({String(_day)})</div>
-              <i className="far fa-calendar-alt" onClick={toggle} ></i>
+              <div className="ticketingmovie" onClick={toggle}>
+                {Number(_year)}. {Number(_month)}. {Number(_date)}({String(_day)})
+                <i className="far fa-calendar-alt" onClick={toggle} ></i>  
+              </div>
+              
               <div className="ticketingmovie_calendar">
                 <button onClick={toggle}>{_calendar}</button>
                 <div data={data} className="ticketingmovie_time">
@@ -118,21 +123,16 @@ function Ticketing(data){ //라우터에서 전달한 props를 인자로 받아�
                           <div onClick={()=>{ setTimes({ ...times, count:0 });}}>{time[0].when}<span>{time[0].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:1 });}}>{time[1].when}<span>{time[1].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:2 });}}>{time[2].when}<span>{time[2].where}</span></div>
-                      </div>
-                      <div className="_time_info_1">
                           <div onClick={()=>{ setTimes({ ...times, count:3 });}}>{time[3].when}<span>{time[3].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:4 });}}>{time[4].when}<span>{time[4].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:5 });}}>{time[5].when}<span>{time[5].where}</span></div>
-                      </div>
-                      <div className="_time_info_1">
                           <div onClick={()=>{ setTimes({ ...times, count:6 });}}>{time[6].when}<span>{time[6].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:7 });}}>{time[7].when}<span>{time[7].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:8 });}}>{time[8].when}<span>{time[8].where}</span></div>
-                      </div>
-                      <div className="_time_info_1">
                           <div onClick={()=>{ setTimes({ ...times, count:9 });}}>{time[9].when}<span>{time[9].where}</span></div>
                           <div onClick={()=>{ setTimes({ ...times, count:10 });}}>{time[10].when}<span>{time[10].where}</span></div>
                       </div>
+                   
                   </div>
                 </div>
                 {_ticket }

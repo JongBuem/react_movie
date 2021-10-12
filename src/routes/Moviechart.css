@@ -7,7 +7,7 @@ body {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #353232;
+  background-color: #F0F2F0;
   height: 100%;
 }
 
@@ -17,49 +17,56 @@ body,
 .App {
   height: 100%;
   display: flex;
-  justify-content: center;
+  height: auto;
+  flex-direction: column;
+  align-content: center;
 }
 
 .loading {
   width: 100%;
-  height: 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 300;
-  color: white;
+  color: black;
 }
 
 .about {
   width: 100%;
-  height: 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 300;
-  color: white;
+  color: black;
 }
 
 .home {
   display: flex;
-  margin-top: 130px;
+  justify-content: center;
+  align-content: center;
   border-radius: 10px;
-  height: 70vh;
+  height: 90vh;
 }
 
 .home_menu_title {
-  position: absolute;
-  color: white;
-  top: 16%;
-  height: 30px;
-  border-bottom: 1px solid aliceblue;
+  align-content: center;
+  font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  height: auto;
+  margin-bottom: 80px;
+  border-bottom: 3px solid black;
 }
+
 
 .addmovie {
   position: absolute;
   top: 21%;
   left: 75%;
-  color: rgb(211, 200, 200);
+  color: black;
   text-decoration: none;
   font-size: 13px;
 }
+

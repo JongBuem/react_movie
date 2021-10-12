@@ -18,7 +18,7 @@ function Moviechart(data){ //라우터에서 전달한 props를 인자로 받아
             <div className="movies">
               {
               movies.map(movie=>(
-                <Movie 
+                <Movie
                 key={movie.id}
                 id={movie.id} 
                 year={movie.year} 

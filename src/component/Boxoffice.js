@@ -4,14 +4,15 @@ import "./Boxoffice.css";
 import { Link } from "react-router-dom";
 let rank = 0; //평점순위
 
-function Boxoffice({id, year, title, summary, medium_cover_image, genres, rating, runtime}){
+function Boxoffice({id, year, title, summary, medium_cover_image, genres, rating, runtime, count}){
     rank = rank+1; //평점순위 증가
-    if(rank>4){ //폄점순위를 4위까지만 보여줌
+    if(rank>count){ //폄점순위를 4위까지만 보여줌
         rank=1; //더이상 순위증가를 막기위한 초기화
     } 
 
     return (
-        <div className="Boxoffice">
+        <div className="Boxoffice" id={rank}>
+            
             <Link to={{ 
                 pathname:`/movie/${id}`,
                 state:{
@@ -31,6 +32,7 @@ function Boxoffice({id, year, title, summary, medium_cover_image, genres, rating
                     <i className="far fa-heart"> {id}</i> {/*영화 좋아요 갯수를 id로 임시 출력*/}
                 </div>
                 <Link to="/ticketing">예매</Link> {/*클릭시 예매 컴포넌트로 이동*/}
+                
             </div>
         </div>          
     );
